@@ -43,7 +43,7 @@ public class Water_LevelController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Water_LevelModel> getWaterLevel(@RequestParam("id") long id) throws Exception {
+    public ResponseEntity<Water_LevelModel> getWaterLevel(@PathVariable long id) throws Exception {
         try {
             log.info("Getting Water_LevelModel by id {}", id);
             return ResponseEntity.ok(water_levelService.findwaterlevelbyid(id).get());
@@ -54,7 +54,7 @@ public class Water_LevelController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> deleteWaterLevel(@RequestParam("id") long id) throws Exception {
+    public ResponseEntity<String> deleteWaterLevel(@PathVariable long id) throws Exception {
         try {
             log.info("Deleting Water_LevelModel with id {}", id);
             water_levelService.delete(water_levelService.findwaterlevelbyid(id).get());

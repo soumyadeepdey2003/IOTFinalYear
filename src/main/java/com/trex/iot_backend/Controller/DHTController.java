@@ -33,7 +33,7 @@ public class DHTController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<DHTModel> GetDHT(@RequestParam("id") long id)throws Exception {
+    public ResponseEntity<DHTModel> GetDHT(@PathVariable long id)throws Exception {
         try {
             log.info("Getting all DHTModels");
             return ResponseEntity.ok(dhtService.finddhtbyid(id).get());
@@ -44,7 +44,7 @@ public class DHTController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<String> DeleteDHT(@RequestParam("id") long id) throws Exception {
+    public ResponseEntity<String> DeleteDHT(@PathVariable long id) throws Exception {
         try {
             log.info("Deleting DHTModel with id {}", id);
             dhtService.delete(dhtService.finddhtbyid(id).get());
