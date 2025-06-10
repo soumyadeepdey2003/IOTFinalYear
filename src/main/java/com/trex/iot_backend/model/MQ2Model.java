@@ -1,7 +1,5 @@
 package com.trex.iot_backend.model;
 
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -12,29 +10,26 @@ import org.springframework.scheduling.annotation.Async;
 
 import java.time.LocalDateTime;
 
-
 @Data
 @Slf4j
 @Entity
 @Getter
 @Setter
-@Table(name = "dht")
+@Table(name = "mq2")
 @NoArgsConstructor
 @Async
-public class DHTModel {
-
+public class MQ2Model {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private double temperature;
-    private double humidity;
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    private double methane;
+    private double LPG;
     private LocalDateTime date;
 
-    public DHTModel(double temperature, double humidity, LocalDateTime date) {
-        this.temperature = temperature;
-        this.humidity = humidity;
+    public MQ2Model(double methane, double LPG, LocalDateTime date) {
+        this.methane = methane;
+        this.LPG = LPG;
         this.date = date;
     }
 }

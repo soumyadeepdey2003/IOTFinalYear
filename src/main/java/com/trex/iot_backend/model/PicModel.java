@@ -27,5 +27,6 @@ public class PicModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String img;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
 }

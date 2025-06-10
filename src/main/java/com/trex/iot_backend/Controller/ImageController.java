@@ -40,7 +40,7 @@ public class ImageController {
         }
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<PicModel>> getAllImages() {
         try {
             return ResponseEntity.ok(imageService.findAll());
