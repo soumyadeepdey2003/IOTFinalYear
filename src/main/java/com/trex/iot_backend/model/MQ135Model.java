@@ -1,5 +1,6 @@
 package com.trex.iot_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -25,6 +26,7 @@ public class MQ135Model {
     private long id;
     private double co2;
     private double NH3;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
 
     public MQ135Model(double co2, double NH3, LocalDateTime date) {

@@ -1,5 +1,6 @@
 package com.trex.iot_backend.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -25,6 +26,7 @@ public class MQ2Model {
     private long id;
     private double methane;
     private double LPG;
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
 
     public MQ2Model(double methane, double LPG, LocalDateTime date) {
