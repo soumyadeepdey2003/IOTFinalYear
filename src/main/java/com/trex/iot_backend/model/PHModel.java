@@ -28,11 +28,13 @@ public class PHModel {
     private long id;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
+    private String location;
     private double ph;
 
-    public PHModel(LocalDateTime date, double ph) {
+    public PHModel(LocalDateTime date, double ph, String location) {
         this.date = date;
         this.ph = ph;
+        this.location = location;
     }
 
 }

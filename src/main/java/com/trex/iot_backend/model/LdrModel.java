@@ -17,26 +17,23 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@Table(name = "soil_water")
+@Table(name = "ldr")
 @NoArgsConstructor
 @Async
-public class Soil_waterModel {
-
+public class LdrModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
+    private double ldr;
+    private String Location;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
-    private double soil_water;
-    private String location;
 
-    public Soil_waterModel(LocalDateTime date, double soil_water, String location) {
+    public LdrModel(double ldr, String Location, LocalDateTime date) {
+        this.ldr = ldr;
+        this.Location = Location;
         this.date = date;
-        this.soil_water = soil_water;
-        this.location = location;
     }
-
-
 
 }

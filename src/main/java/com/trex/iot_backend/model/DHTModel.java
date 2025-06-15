@@ -27,14 +27,16 @@ public class DHTModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String location;
     private double temperature;
     private double humidity;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
 
-    public DHTModel(double temperature, double humidity, LocalDateTime date) {
+    public DHTModel(double temperature, double humidity, LocalDateTime date, String location) {
         this.temperature = temperature;
         this.humidity = humidity;
         this.date = date;
+        this.location = location;
     }
 }

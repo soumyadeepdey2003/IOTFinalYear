@@ -26,12 +26,14 @@ public class MQ135Model {
     private long id;
     private double co2;
     private double NH3;
+    private String location;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
 
-    public MQ135Model(double co2, double NH3, LocalDateTime date) {
+    public MQ135Model(double co2, double NH3, LocalDateTime date, String location) {
         this.co2 = co2;
         this.NH3 = NH3;
         this.date = date;
+        this.location = location;
     }
 }

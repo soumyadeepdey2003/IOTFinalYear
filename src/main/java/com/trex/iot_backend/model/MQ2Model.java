@@ -24,14 +24,16 @@ public class MQ2Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    private String location;
     private double methane;
     private double LPG;
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
 
-    public MQ2Model(double methane, double LPG, LocalDateTime date) {
+    public MQ2Model(double methane, double LPG, LocalDateTime date, String location) {
         this.methane = methane;
         this.LPG = LPG;
         this.date = date;
+        this.location = location;
     }
 }

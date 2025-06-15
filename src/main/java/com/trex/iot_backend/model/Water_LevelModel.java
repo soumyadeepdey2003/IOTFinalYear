@@ -28,10 +28,12 @@ public class Water_LevelModel {
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
     private double water_level;
+    private String location;
 
-    public Water_LevelModel(LocalDateTime date, double water_level) {
+    public Water_LevelModel(LocalDateTime date, double water_level, String location) {
         this.date = date;
         this.water_level = water_level;
+        this.location = location;
     }
 
 }
