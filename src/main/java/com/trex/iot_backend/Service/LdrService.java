@@ -36,6 +36,7 @@ public class LdrService {
         try {
             log.info("delete all ldr");
             ldrRepository.deleteAll();
+            return "All LdrModels deleted";
         } catch (Exception e) {
             log.error("Error deleting all LdrModels", e);
             throw new Exception("Error deleting all LdrModels");
@@ -46,6 +47,7 @@ public class LdrService {
         try {
             log.info("delete ldr");
             ldrRepository.deleteById(id);
+            return "LdrModel with ID " + id + " deleted";
         } catch (Exception e) {
             log.error("Error deleting LdrModel with ID {}", id, e);
             throw new Exception("Error deleting LdrModel: " + e.getMessage());
@@ -55,7 +57,7 @@ public class LdrService {
     public List<LdrModel> findAllldr() throws Exception {
         log.info("Finding all LdrModels");
         try {
-            List<LdrModel> ldrModels = ldrRepository.findAll();
+            List<LdrModel> ldrModels = ldrRepository.findAll().stream().toList();
             return ldrModels;
         } catch (Exception e) {
             log.error("Error finding LdrModels", e);
