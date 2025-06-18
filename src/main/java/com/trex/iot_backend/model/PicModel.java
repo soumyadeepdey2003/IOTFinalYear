@@ -25,7 +25,7 @@ public class PicModel {
     private Long id;
     private String img;
     private String location;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime date;
 
     public PicModel(String img, String location, LocalDateTime date) {

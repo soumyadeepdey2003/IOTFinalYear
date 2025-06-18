@@ -27,7 +27,7 @@ public class MQ2Model {
     private String location;
     private double methane;
     private double LPG;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime date;
 
     public MQ2Model(double methane, double LPG, LocalDateTime date, String location) {

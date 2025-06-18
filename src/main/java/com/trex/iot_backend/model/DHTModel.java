@@ -30,7 +30,7 @@ public class DHTModel {
     private String location;
     private double temperature;
     private double humidity;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime date;
 
     public DHTModel(double temperature, double humidity, LocalDateTime date, String location) {
