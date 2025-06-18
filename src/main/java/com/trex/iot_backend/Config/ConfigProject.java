@@ -16,7 +16,7 @@ public class ConfigProject {
     public Cloudinary coudinaryConfig() {
 
         Map config = new HashMap();
-        config.put("cloud_name", "IOTPROJECT");
+        config.put("cloud_name", "ddhprb3ad");
         config.put("api_key", "976873522311814");
         config.put("api_secret", "vsmrugl6CG33ES5ivVN2uZZNZFQ");
         config.put("secure", true);
