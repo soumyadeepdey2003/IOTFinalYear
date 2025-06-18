@@ -17,10 +17,10 @@ import java.time.LocalDateTime;
 @Entity
 @Getter
 @Setter
-@Table(name = "ph")
+@Table(name = "bmp")
 @NoArgsConstructor
 @Async
-public class PHModel {
+public class BMPModel {
 
 
     @Id
@@ -29,11 +29,11 @@ public class PHModel {
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     private LocalDateTime date;
     private String location;
-    private double ph;
+    private double pressure;
 
-    public PHModel(LocalDateTime date, double ph, String location) {
+    public BMPModel(LocalDateTime date, double pressure, String location) {
         this.date = date;
-        this.ph = ph;
+        this.pressure = pressure;
         this.location = location;
     }
 
