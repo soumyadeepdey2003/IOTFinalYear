@@ -2,10 +2,7 @@ package com.trex.iot_backend.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -19,11 +16,10 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Getter
 @Setter
+@Table(name = "pic")
 public class PicModel {
 
-    public PicModel(String img, LocalDateTime date) {
-        this.img = img;
-    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

@@ -20,9 +20,9 @@ public class ImageController {
     private final ImageService imageService;
 
     @PostMapping("/upload")
-    public ResponseEntity<PicModel> uploadImage(@RequestParam("file") MultipartFile file) {
+    public ResponseEntity<PicModel> uploadImage(@RequestParam("file") MultipartFile file,@RequestParam("location") String location) {
         try {
-            PicModel saved = imageService.save(file);
+            PicModel saved = imageService.save(file,location);
             return ResponseEntity.ok(saved);
         } catch (Exception e) {
             log.error("Image upload failed: {}", e.getMessage());

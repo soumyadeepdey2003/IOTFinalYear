@@ -19,15 +19,17 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ImageService {
 
+
     private final PicRepository picRepository;
     private final ConfigProject configProject;
 
-    public PicModel save(MultipartFile file) throws Exception {
+    public PicModel save(MultipartFile file,String location) throws Exception {
         try {
             Map uploadResult = uploadImage(file);
             String imageUrl = (String) uploadResult.get("secure_url");
 
             PicModel picModel = new PicModel();
+            picModel.setLocation(location);
             picModel.setDate(LocalDateTime.now());
             picModel.setImg(imageUrl);
 
