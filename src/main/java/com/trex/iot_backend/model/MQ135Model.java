@@ -27,7 +27,7 @@ public class MQ135Model {
     private double co2;
     private double NH3;
     private String location;
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime date;
 
     public MQ135Model(double co2, double NH3, LocalDateTime date, String location) {

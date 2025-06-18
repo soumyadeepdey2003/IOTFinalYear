@@ -27,7 +27,7 @@ public class LdrModel {
     private long id;
     private double ldr;
     private String Location;
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime date;
 
     public LdrModel(double ldr, String Location, LocalDateTime date) {
