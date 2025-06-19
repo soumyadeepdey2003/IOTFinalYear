@@ -30,7 +30,7 @@ public class LdrModel {
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime date;
 
-    public LdrModel(double ldr, String Location, LocalDateTime date) {
+    public LdrModel(String ldr, String Location, LocalDateTime date) {
         this.ldr = ldr;
         this.Location = Location;
         this.date = date;
